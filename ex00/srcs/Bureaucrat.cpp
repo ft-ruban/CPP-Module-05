@@ -6,13 +6,35 @@
 /*   By: ldevoude <ldevoude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 14:54:37 by ldevoude          #+#    #+#             */
-/*   Updated: 2026/01/29 15:59:51 by ldevoude         ###   ########.fr       */
+/*   Updated: 2026/01/30 14:45:09 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(std::string given_name, std::size_t given_grade): name(given_name), grade(given_grade){
+
+const char* Bureaucrat::GradeTooHighException::what() const throw() {
+    return "Grade too high";
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw() {
+    return "Grade too low";
+}
+
+Bureaucrat::Bureaucrat(std::string given_name, int given_grade): name(given_name){
+    try{
+        grade = given_grade;
+        if(grade > 150)
+           throw Bureaucrat::GradeTooLowException();
+        else if(grade < 1)
+           throw Bureaucrat::GradeTooHighException();
+    }
+    catch(GradeTooLowException){
+        std::cout<<"ERROR TEST TOOLOWEXCEPTION"<<std::endl;
+    }
+    catch(GradeTooHighException){
+        std::cout<<"ERROR TEST TOOHIGHEXCEPTION"<<std::endl;
+    }
     return; //exception par rapport au grade?
 }
 
@@ -37,6 +59,6 @@ std::string Bureaucrat::getName()const{
     return(name);
 }
 
-std::size_t Bureaucrat::getGrade()const{
+int Bureaucrat::getGrade()const{
     return(grade);
 }
