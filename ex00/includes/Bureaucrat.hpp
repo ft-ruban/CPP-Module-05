@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 11:35:45 by ldevoude          #+#    #+#             */
-/*   Updated: 2026/01/30 14:43:24 by ldevoude         ###   ########.fr       */
+/*   Updated: 2026/02/04 12:34:14 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 #define BUREAUCRAT_HPP
 
 #include <iostream>
-
-//todo faire la classe exception
+#include <string>
+#include <exception>
 
 class Bureaucrat{
     public:
@@ -34,15 +34,14 @@ class Bureaucrat{
 
         std::string getName()const;
         int getGrade()const;
-        Bureaucrat& operator++();
-        Bureaucrat& operator--();
-        //overload of <<
+        
+        void increment();
+        void decrement();
     
     private:
         const std::string name;
-        int grade; //unsure about the type here
+        int grade;
 };
-
-
+std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 14:54:37 by ldevoude          #+#    #+#             */
-/*   Updated: 2026/01/30 14:45:09 by ldevoude         ###   ########.fr       */
+/*   Updated: 2026/02/04 12:29:47 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,20 +22,12 @@ const char* Bureaucrat::GradeTooLowException::what() const throw() {
 }
 
 Bureaucrat::Bureaucrat(std::string given_name, int given_grade): name(given_name){
-    try{
-        grade = given_grade;
-        if(grade > 150)
-           throw Bureaucrat::GradeTooLowException();
-        else if(grade < 1)
-           throw Bureaucrat::GradeTooHighException();
-    }
-    catch(GradeTooLowException){
-        std::cout<<"ERROR TEST TOOLOWEXCEPTION"<<std::endl;
-    }
-    catch(GradeTooHighException){
-        std::cout<<"ERROR TEST TOOHIGHEXCEPTION"<<std::endl;
-    }
-    return; //exception par rapport au grade?
+    grade = given_grade;
+    if(grade > 150)
+        throw Bureaucrat::GradeTooLowException();
+    else if(grade < 1)
+        throw Bureaucrat::GradeTooHighException();
+    return;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &other) : name(other.name), grade(other.grade){
@@ -61,4 +53,23 @@ std::string Bureaucrat::getName()const{
 
 int Bureaucrat::getGrade()const{
     return(grade);
+}
+
+void Bureaucrat::increment(){
+    grade--;
+    if(grade < 1)
+        throw Bureaucrat::GradeTooHighException();
+    return;
+}
+
+void Bureaucrat::decrement(){
+    grade++;
+    if(grade > 150)
+        throw Bureaucrat::GradeTooLowException();
+    return;
+}
+
+std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat){
+    out << bureaucrat.getName()<<", bureaucrat grade "<< bureaucrat.getGrade();
+    return out;
 }
