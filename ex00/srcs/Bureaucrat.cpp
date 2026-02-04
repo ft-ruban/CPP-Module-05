@@ -6,12 +6,11 @@
 /*   By: ldevoude <ldevoude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 14:54:37 by ldevoude          #+#    #+#             */
-/*   Updated: 2026/02/04 12:29:47 by ldevoude         ###   ########.fr       */
+/*   Updated: 2026/02/04 16:00:27 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-
 
 const char* Bureaucrat::GradeTooHighException::what() const throw() {
     return "Grade too high";

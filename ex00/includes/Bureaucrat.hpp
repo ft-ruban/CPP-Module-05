@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 11:35:45 by ldevoude          #+#    #+#             */
-/*   Updated: 2026/02/04 12:34:14 by ldevoude         ###   ########.fr       */
+/*   Updated: 2026/02/04 16:01:11 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class Bureaucrat{
         ~Bureaucrat();
 
         std::string getName()const;
-        int getGrade()const;
+        int         getGrade()const;
         
         void increment();
         void decrement();
