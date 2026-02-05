@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 15:10:09 by ldevoude          #+#    #+#             */
-/*   Updated: 2026/02/04 16:06:41 by ldevoude         ###   ########.fr       */
+/*   Updated: 2026/02/05 09:38:52 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,14 @@ int main(void){
 
     try
     {
-        wallace = new Bureaucrat("Wallace Breen", 15);
+        wallace = new Bureaucrat("Wallace Breen", 150);
         std::cout<<*wallace<<std::endl;
         wallace->increment();
         std::cout<<*wallace<<std::endl;
         wallace->decrement();
-        //bureaucrat->decrement();
+        wallace->decrement();
         std::cout<<*wallace<<std::endl;
+        std::cout<<"end of try scope"<<std::endl;
     }
     catch (std::exception & e)
     {
