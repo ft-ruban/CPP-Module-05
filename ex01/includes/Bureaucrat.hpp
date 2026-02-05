@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 11:35:45 by ldevoude          #+#    #+#             */
-/*   Updated: 2026/02/05 09:51:18 by ldevoude         ###   ########.fr       */
+/*   Updated: 2026/02/05 15:04:24 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ class Bureaucrat{
         
         void increment();
         void decrement();
+        void signForm();
     
     private:
         const std::string name_;

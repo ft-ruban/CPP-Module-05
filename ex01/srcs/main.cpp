@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 15:10:09 by ldevoude          #+#    #+#             */
-/*   Updated: 2026/02/05 09:38:52 by ldevoude         ###   ########.fr       */
+/*   Updated: 2026/02/05 14:12:19 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int main(void){
     }
     catch (std::exception & e)
     {
+        std::cout<< e.what() <<std::endl;
         delete wallace;
         std::cout<<"exception caught"<<std::endl;
         return(1);

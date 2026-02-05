@@ -6,11 +6,13 @@
 /*   By: ldevoude <ldevoude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 14:54:37 by ldevoude          #+#    #+#             */
-/*   Updated: 2026/02/05 11:06:46 by ldevoude         ###   ########.fr       */
+/*   Updated: 2026/02/05 15:04:19 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+
+//TODO RM "x Bureaucrat called"
 
 const char* Bureaucrat::GradeTooHighException::what() const throw() {
     return "Grade too high";
@@ -28,13 +30,16 @@ Bureaucrat::Bureaucrat(std::string given_name, int given_grade): name_(given_nam
         throw Bureaucrat::GradeTooHighException();
     return;
 }
-
+//TOCOMPLETE
 Bureaucrat::Bureaucrat(const Bureaucrat &other) : name_(other.name_), grade_(other.grade_){
-    std::cout<<"copy constructor Bureaucrat called"<<std::endl;
+    if(grade_ > 150)
+        throw Bureaucrat::GradeTooLowException();
+    else if(grade_ < 1)
+        throw Bureaucrat::GradeTooHighException();
+    return;
 }
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other){
-    std::cout<<"copy assignement Bureaucrat called"<<std::endl;
     if(this != &other){
         this->grade_ = other.grade_;
     }
@@ -42,7 +47,6 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other){
 }
 
 Bureaucrat::~Bureaucrat(){
-    std::cout<<"destructor of bureaucrat "<<name_<<" called. (grade was : "<<grade_<<")"<<std::endl;
     return;
 }
 
