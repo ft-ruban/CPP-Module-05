@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 14:54:37 by ldevoude          #+#    #+#             */
-/*   Updated: 2026/02/05 15:04:19 by ldevoude         ###   ########.fr       */
+/*   Updated: 2026/02/05 15:59:07 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,10 @@ void Bureaucrat::decrement(){
     if(grade_ > 150)
         throw Bureaucrat::GradeTooLowException();
     return;
+}
+
+void Bureaucrat::signForm(Form &form){
+    form.beSigned(*this);
 }
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat){

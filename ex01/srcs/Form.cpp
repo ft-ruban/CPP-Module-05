@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 15:01:46 by ldevoude          #+#    #+#             */
-/*   Updated: 2026/02/05 15:02:32 by ldevoude         ###   ########.fr       */
+/*   Updated: 2026/02/05 15:48:04 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +73,11 @@ void Form::beSigned(const Bureaucrat &bureaucrat){
         is_signed_ = true;
     else
         throw Form::GradeTooLowException();
+    return;
+}
+
+std::ostream &operator<<(std::ostream &out, const Form &form){
+    out<<form.getName()<<", form is signed? "<<form.getIsSigned()<<
+    " required grade to sign "<<form.getReqGradeToSign()<<"required grade to exec "<< form.getReqGradeToExec();
     return;
 }

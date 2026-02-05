@@ -33,3 +33,4 @@ class Form{
         const int         req_grade_to_sign_;
         const int         req_grade_to_exec_;
 };
+std::ostream &operator<<(std::ostream &out, const Form &form);
