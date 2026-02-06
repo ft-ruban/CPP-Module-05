@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 11:35:45 by ldevoude          #+#    #+#             */
-/*   Updated: 2026/02/05 15:59:29 by ldevoude         ###   ########.fr       */
+/*   Updated: 2026/02/06 15:04:48 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #include <string>
 #include <exception>
 #include "Form.hpp"
+
+class Form;
 
 class Bureaucrat{
     public:

@@ -6,13 +6,11 @@
 /*   By: ldevoude <ldevoude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 14:54:37 by ldevoude          #+#    #+#             */
-/*   Updated: 2026/02/05 15:59:07 by ldevoude         ###   ########.fr       */
+/*   Updated: 2026/02/06 15:14:42 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-
-//TODO RM "x Bureaucrat called"
 
 const char* Bureaucrat::GradeTooHighException::what() const throw() {
     return "Grade too high";
@@ -73,7 +71,17 @@ void Bureaucrat::decrement(){
 }
 
 void Bureaucrat::signForm(Form &form){
-    form.beSigned(*this);
+    try{
+        form.beSigned(*this);
+        std::cout<<this->name_<<" signed "<< form.getName()<<std::endl;
+    }
+    catch(std::exception &e)
+    {
+        std::cout<<this->name_<<" couldnt sign "
+                 <<form.getName()<<" because "
+                 <<e.what()<< std::endl;
+    }
+
 }
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat){

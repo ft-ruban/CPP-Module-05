@@ -7,3 +7,4 @@ SRC += $(addprefix $(MAINDIR), $(addsuffix .cpp, $(MAIN)))
 
 override MAIN := main \
 				 Bureaucrat \
+				 Form \

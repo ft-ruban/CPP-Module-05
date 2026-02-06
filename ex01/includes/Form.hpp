@@ -1,7 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ldevoude <ldevoude@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/06 15:05:10 by ldevoude          #+#    #+#             */
+/*   Updated: 2026/02/06 15:05:34 by ldevoude         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#ifndef FORM_HPP
+#define FORM_HPP
 
+#include <iostream>
 #include <string>
+#include <exception>
 #include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form{
     public:
@@ -13,7 +30,6 @@ class Form{
             public:
                 virtual const char* what() const throw();
         };
-        
         Form(std::string given_name, int given_req_grade_to_sign, int given_req_grade_to_exec);
         Form(const Form &other);
         Form &operator=(const Form &other);
@@ -24,13 +40,15 @@ class Form{
         int         getReqGradeToSign()const;
         int         getReqGradeToExec()const;
     
-        void beSigned(const Bureaucrat &bureaucrat);
-
+        void beSigned(const Bureaucrat &other);
 
     private:
         const std::string name_;
-        bool              is_signed_;
         const int         req_grade_to_sign_;
         const int         req_grade_to_exec_;
+        bool              is_signed_;
+
 };
 std::ostream &operator<<(std::ostream &out, const Form &form);
+
+#endif
