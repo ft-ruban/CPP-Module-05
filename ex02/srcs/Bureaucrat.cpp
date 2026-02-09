@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 14:54:37 by ldevoude          #+#    #+#             */
-/*   Updated: 2026/02/06 15:14:42 by ldevoude         ###   ########.fr       */
+/*   Updated: 2026/02/09 07:20:42 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void Bureaucrat::decrement(){
     return;
 }
 
-void Bureaucrat::signForm(Form &form){
+void Bureaucrat::signForm(AForm &form){
     try{
         form.beSigned(*this);
         std::cout<<this->name_<<" signed "<< form.getName()<<std::endl;

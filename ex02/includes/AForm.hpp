@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldevoude <ldevoude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/06 15:05:10 by ldevoude          #+#    #+#             */
-/*   Updated: 2026/02/06 15:05:34 by ldevoude         ###   ########.fr       */
+/*   Updated: 2026/02/09 07:18:11 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 class Bureaucrat;
 
-class Form{
+class AForm{
     public:
         class GradeTooHighException : public std::exception{
             public:
@@ -30,15 +30,15 @@ class Form{
             public:
                 virtual const char* what() const throw();
         };
-        Form(std::string given_name, int given_req_grade_to_sign, int given_req_grade_to_exec);
-        Form(const Form &other);
-        Form &operator=(const Form &other);
-        ~Form();
+        AForm(std::string given_name, int given_req_grade_to_sign, int given_req_grade_to_exec);
+        AForm(const AForm &other);
+        AForm &operator=(const AForm &other);
+        virtual ~AForm();
 
-        std::string getName()const;
-        bool        getIsSigned()const;
-        int         getReqGradeToSign()const;
-        int         getReqGradeToExec()const;
+        virtual std::string getName()const = 0;
+        virtual bool        getIsSigned()const;
+        virtual int         getReqGradeToSign()const;
+        virtual int         getReqGradeToExec()const;
     
         void beSigned(const Bureaucrat &other);
 
@@ -49,6 +49,6 @@ class Form{
         bool              is_signed_;
 
 };
-std::ostream &operator<<(std::ostream &out, const Form &form);
+std::ostream &operator<<(std::ostream &out, const AForm &form);
 
 #endif

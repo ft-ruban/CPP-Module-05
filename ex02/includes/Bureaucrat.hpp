@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 11:35:45 by ldevoude          #+#    #+#             */
-/*   Updated: 2026/02/06 15:04:48 by ldevoude         ###   ########.fr       */
+/*   Updated: 2026/02/09 07:20:05 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 #include <iostream>
 #include <string>
 #include <exception>
-#include "Form.hpp"
+#include "AForm.hpp"
 
-class Form;
+class AForm;
 
 class Bureaucrat{
     public:
@@ -40,7 +40,7 @@ class Bureaucrat{
         
         void increment();
         void decrement();
-        void signForm(Form &form);
+        void signForm(AForm &form);
     
     private:
         const std::string name_;
