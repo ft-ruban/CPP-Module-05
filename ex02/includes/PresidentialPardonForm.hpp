@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldevoude <ldevoude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/09 07:14:04 by ldevoude          #+#    #+#             */
-/*   Updated: 2026/02/09 09:36:23 by ldevoude         ###   ########.fr       */
+/*   Created: 2026/02/09 09:33:47 by ldevoude          #+#    #+#             */
+/*   Updated: 2026/02/10 08:42:59 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBBERYCREATIONFORM_HPP
-#define SHRUBBERYCREATIONFORM_HPP
+#ifndef PRESIDENTIALPARDONFORM_HPP
+#define PRESIDENTIALPARDONFORM_HPP
 
-#include <iostream>
-#include <string>
 #include "AForm.hpp"
 
-
-class ShrubberyCreationForm : public AForm{
+class PresidentialPardonForm : public AForm{
     public:
-        ShrubberyCreationForm(std::string const& target);
-        ShrubberyCreationForm(const ShrubberyCreationForm &other);
-        ShrubberyCreationForm &operator=(const ShrubberyCreationForm &other);
-        ~ShrubberyCreationForm();
+        PresidentialPardonForm(std::string const& target);
+        PresidentialPardonForm(const PresidentialPardonForm &other);
+        PresidentialPardonForm &operator=(const PresidentialPardonForm &other);
+        ~PresidentialPardonForm();
 
     private:
-        std::string target_;
+    std::string target_;
         
 };
 

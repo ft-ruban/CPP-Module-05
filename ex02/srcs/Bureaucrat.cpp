@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 14:54:37 by ldevoude          #+#    #+#             */
-/*   Updated: 2026/02/09 07:20:42 by ldevoude         ###   ########.fr       */
+/*   Updated: 2026/02/10 08:43:23 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Bureaucrat::Bureaucrat(std::string given_name, int given_grade): name_(given_nam
         throw Bureaucrat::GradeTooHighException();
     return;
 }
-//TOCOMPLETE
+
 Bureaucrat::Bureaucrat(const Bureaucrat &other) : name_(other.name_), grade_(other.grade_){
     if(grade_ > 150)
         throw Bureaucrat::GradeTooLowException();
