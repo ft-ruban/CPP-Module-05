@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 14:54:37 by ldevoude          #+#    #+#             */
-/*   Updated: 2026/02/10 08:43:23 by ldevoude         ###   ########.fr       */
+/*   Updated: 2026/02/10 10:22:57 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,14 +75,26 @@ void Bureaucrat::signForm(AForm &form){
         form.beSigned(*this);
         std::cout<<this->name_<<" signed "<< form.getName()<<std::endl;
     }
-    catch(std::exception &e)
-    {
-        std::cout<<this->name_<<" couldnt sign "
+    catch(std::exception &e){
+        std::cout<<this->name_<<" couldn't sign "
                  <<form.getName()<<" because "
-                 <<e.what()<< std::endl;
+                 <<e.what()<<std::endl;
     }
 
 }
+
+void Bureaucrat::executeForm(AForm const & form)const {
+    try{
+        form.execute(*this);
+        std::cout<<this->name_<<" executed "<< form.getName()<<std::endl;
+    }
+    catch(std::exception &e){
+        std::cout<<this->name_<<" couldn't execute "
+                 <<form.getName()<<" because "
+                 <<e.what()<<std::endl;
+    }
+}
+
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat){
     out << bureaucrat.getName()<<", bureaucrat grade "<< bureaucrat.getGrade();

@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 09:21:18 by ldevoude          #+#    #+#             */
-/*   Updated: 2026/02/10 08:56:34 by ldevoude         ###   ########.fr       */
+/*   Updated: 2026/02/10 10:39:30 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class RobotomyRequestForm : public AForm{
         RobotomyRequestForm &operator=(const RobotomyRequestForm &other);
         ~RobotomyRequestForm();
     
+        virtual void formAction()const ;
     private:
         std::string target_;
 };

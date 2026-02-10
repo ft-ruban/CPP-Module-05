@@ -10,4 +10,4 @@ override MAIN := main \
 				 AForm \
 				 PresidentialPardonForm \
 				 RobotomyRequestForm \
-				 ShrubberyCreationForm\
+				 ShrubberyCreationForm \

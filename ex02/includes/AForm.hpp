@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/06 15:05:10 by ldevoude          #+#    #+#             */
-/*   Updated: 2026/02/09 07:18:11 by ldevoude         ###   ########.fr       */
+/*   Updated: 2026/02/10 10:36:33 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,28 @@ class AForm{
             public:
                 virtual const char* what() const throw();
         };
+        class FormNotSignedDuringExec : public std::exception{
+            public:
+                virtual const char* what() const throw();
+        };
+        class GradeTooLowToExec : public std::exception{
+            public:
+                virtual const char* what() const throw();
+        };
+        
         AForm(std::string given_name, int given_req_grade_to_sign, int given_req_grade_to_exec);
         AForm(const AForm &other);
         AForm &operator=(const AForm &other);
         virtual ~AForm();
 
-        virtual std::string getName()const = 0;
-        virtual bool        getIsSigned()const;
-        virtual int         getReqGradeToSign()const;
-        virtual int         getReqGradeToExec()const;
+        std::string getName()const;
+        bool        getIsSigned()const;
+        int         getReqGradeToSign()const;
+        int         getReqGradeToExec()const;
     
         void beSigned(const Bureaucrat &other);
+        void execute(Bureaucrat const & executor)const;
+        virtual void formAction()const = 0;
 
     private:
         const std::string name_;

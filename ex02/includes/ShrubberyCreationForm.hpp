@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 07:14:04 by ldevoude          #+#    #+#             */
-/*   Updated: 2026/02/09 09:36:23 by ldevoude         ###   ########.fr       */
+/*   Updated: 2026/02/10 10:42:15 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class ShrubberyCreationForm : public AForm{
         ShrubberyCreationForm &operator=(const ShrubberyCreationForm &other);
         ~ShrubberyCreationForm();
 
+        virtual void formAction()const;
     private:
         std::string target_;
         

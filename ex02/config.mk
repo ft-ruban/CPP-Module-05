@@ -1,4 +1,4 @@
-NAME            := maggots
+NAME            := no_you_need
 EXEC			:= bin/$(NAME)
 OBJS_DIR        := .objs/
 EXEC_DIR        := bin/

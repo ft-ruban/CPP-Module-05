@@ -6,13 +6,15 @@
 /*   By: ldevoude <ldevoude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 09:33:47 by ldevoude          #+#    #+#             */
-/*   Updated: 2026/02/10 08:42:59 by ldevoude         ###   ########.fr       */
+/*   Updated: 2026/02/10 10:30:19 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PRESIDENTIALPARDONFORM_HPP
 #define PRESIDENTIALPARDONFORM_HPP
 
+#include <iostream>
+#include <string>
 #include "AForm.hpp"
 
 class PresidentialPardonForm : public AForm{
@@ -22,6 +24,7 @@ class PresidentialPardonForm : public AForm{
         PresidentialPardonForm &operator=(const PresidentialPardonForm &other);
         ~PresidentialPardonForm();
 
+        virtual void formAction()const ;
     private:
     std::string target_;
         

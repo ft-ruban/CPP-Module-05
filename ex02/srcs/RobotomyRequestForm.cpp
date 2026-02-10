@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 08:43:57 by ldevoude          #+#    #+#             */
-/*   Updated: 2026/02/10 08:50:10 by ldevoude         ###   ########.fr       */
+/*   Updated: 2026/02/10 10:40:26 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,8 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &o
 }
 
 RobotomyRequestForm::~RobotomyRequestForm(){
+}
 
+void RobotomyRequestForm::formAction()const{
+    
 }
