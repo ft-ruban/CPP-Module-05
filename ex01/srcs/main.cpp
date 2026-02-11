@@ -6,21 +6,36 @@
 /*   By: ldevoude <ldevoude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 15:10:09 by ldevoude          #+#    #+#             */
-/*   Updated: 2026/02/06 15:01:58 by ldevoude         ###   ########.fr       */
+/*   Updated: 2026/02/10 15:28:18 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <string>
-#include <exception>
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
-void test_class_form_getters(Form* form_to_test){
-    std::cout<<form_to_test->getName()<<" status is : "<<form_to_test->getIsSigned()
-             <<" it require the following grade to sign it: "<<form_to_test->getReqGradeToSign()
-             <<" and require the following grade to execute it: "<<form_to_test->getReqGradeToExec()
-             <<std::endl;
+bool Bureaucrat_test(std::string name_bureaucrat, int grade_to_give){
+    Bureaucrat* bureaucrat_object = NULL;
+    try
+    {
+        bureaucrat_object = new Bureaucrat(name_bureaucrat, grade_to_give);
+        std::cout<<*bureaucrat_object<<std::endl;
+        bureaucrat_object->increment();
+        std::cout<<*bureaucrat_object<<std::endl;
+        bureaucrat_object->decrement();
+        bureaucrat_object->decrement();
+        std::cout<<*bureaucrat_object<<std::endl;
+        std::cout<<"end of try scope"<<std::endl;
+    }
+    catch (std::exception & e)
+    {
+        delete bureaucrat_object;
+        std::cout<<"exception caught "<<e.what()<<std::endl;
+        return(1);
+    }
+    std::cout<<"no exception caught"<<std::endl;
+    delete bureaucrat_object;
+    return(0);
 }
 
 int main(void){
@@ -29,13 +44,12 @@ int main(void){
 
     try
     {
-        form_one = new Form("form_one", 50, 50);
-        wallace = new Bureaucrat("Wallace Breen", 50);
+        form_one = new Form("form_one", 15, 45);
+        wallace = new Bureaucrat("Wallace Breen", 80);
         std::cout<<*wallace<<std::endl;
-        test_class_form_getters(form_one);
-        //wallace->decrement();
+        std::cout<<*form_one<<std::endl;
         wallace->signForm(*form_one);
-        test_class_form_getters(form_one);
+        std::cout<<*form_one<<std::endl;
         std::cout<<"end of try scope"<<std::endl;
     }
     catch (std::exception & e)
@@ -47,7 +61,6 @@ int main(void){
         return(1);
     }
     std::cout<<"no exception caught"<<std::endl;
-    //std::cout<<wallace->getName()<<wallace->getGrade()<<std::endl;
     delete form_one;
     delete wallace;
     return 0; 

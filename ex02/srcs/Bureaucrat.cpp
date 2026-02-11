@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 14:54:37 by ldevoude          #+#    #+#             */
-/*   Updated: 2026/02/10 10:22:57 by ldevoude         ###   ########.fr       */
+/*   Updated: 2026/02/11 09:06:12 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,8 @@ void Bureaucrat::executeForm(AForm const & form)const {
 
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat){
-    out << bureaucrat.getName()<<", bureaucrat grade "<< bureaucrat.getGrade();
+    out << bureaucrat.getName()
+        <<", bureaucrat grade "
+        << bureaucrat.getGrade();
     return out;
 }

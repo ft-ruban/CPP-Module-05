@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 09:33:47 by ldevoude          #+#    #+#             */
-/*   Updated: 2026/02/10 10:30:19 by ldevoude         ###   ########.fr       */
+/*   Updated: 2026/02/11 09:03:15 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #define PRESIDENTIALPARDONFORM_HPP
 
 #include <iostream>
-#include <string>
 #include "AForm.hpp"
 
 class PresidentialPardonForm : public AForm{

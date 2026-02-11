@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 15:01:46 by ldevoude          #+#    #+#             */
-/*   Updated: 2026/02/10 10:26:25 by ldevoude         ###   ########.fr       */
+/*   Updated: 2026/02/11 09:05:35 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,11 @@ void AForm::execute(Bureaucrat const & executor)const{
 }
 
 std::ostream &operator<<(std::ostream &out, const AForm &form){
-    out<<form.getName()<<", form is signed? "<<form.getIsSigned()<<
-    " required grade to sign "<<form.getReqGradeToSign()<<"required grade to exec "<< form.getReqGradeToExec();
+    out<<form.getName()<<", form is signed? "
+                       <<form.getIsSigned()
+                       <<" required grade to sign "
+                       <<form.getReqGradeToSign()
+                       <<"required grade to exec "
+                       << form.getReqGradeToExec();
     return(out);
 }

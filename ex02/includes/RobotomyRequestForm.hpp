@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 09:21:18 by ldevoude          #+#    #+#             */
-/*   Updated: 2026/02/10 10:39:30 by ldevoude         ###   ########.fr       */
+/*   Updated: 2026/02/11 09:03:48 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 #define ROBOTOMYREQUESTFORM_HPP
 
 #include <iostream>
-#include <string>
+#include <cstdlib>
 #include "AForm.hpp"
-
 
 class RobotomyRequestForm : public AForm{
     public:

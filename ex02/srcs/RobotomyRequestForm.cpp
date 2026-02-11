@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 08:43:57 by ldevoude          #+#    #+#             */
-/*   Updated: 2026/02/10 10:40:26 by ldevoude         ###   ########.fr       */
+/*   Updated: 2026/02/11 09:07:28 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,16 @@ RobotomyRequestForm::~RobotomyRequestForm(){
 }
 
 void RobotomyRequestForm::formAction()const{
-    
+    std::cout<<"*DRILLING NOISES*"<<std::endl;
+    switch(rand() % 2){
+        case 0:
+            std::cout<<"Robotomy failed for "
+                     <<target_<<std::endl;
+            break;
+        case 1:
+            std::cout<<target_
+                     <<" has been robotomized successfully"
+                     <<std::endl;
+            break;
+    }
 }

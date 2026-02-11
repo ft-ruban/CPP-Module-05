@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 08:50:25 by ldevoude          #+#    #+#             */
-/*   Updated: 2026/02/10 10:30:25 by ldevoude         ###   ########.fr       */
+/*   Updated: 2026/02/11 09:08:45 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,7 @@ PresidentialPardonForm::~PresidentialPardonForm(){
 }
 
 void PresidentialPardonForm::formAction()const {
-    std::cout<<this->target_<<" has beed pardoned by Zaphod Beeblebrox."<<std::endl;
+    std::cout<<this->target_
+             <<" has been pardoned by Zaphod Beeblebrox."
+             <<std::endl;
 }

@@ -6,18 +6,18 @@
 /*   By: ldevoude <ldevoude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 14:54:37 by ldevoude          #+#    #+#             */
-/*   Updated: 2026/02/06 15:14:42 by ldevoude         ###   ########.fr       */
+/*   Updated: 2026/02/11 08:50:42 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
 const char* Bureaucrat::GradeTooHighException::what() const throw() {
-    return "Grade too high";
+    return "Bureaucrat: Grade too high";
 }
 
 const char* Bureaucrat::GradeTooLowException::what() const throw() {
-    return "Grade too low";
+    return "Bureaucrat: Grade too low";
 }
 
 Bureaucrat::Bureaucrat(std::string given_name, int given_grade): name_(given_name){
@@ -28,7 +28,7 @@ Bureaucrat::Bureaucrat(std::string given_name, int given_grade): name_(given_nam
         throw Bureaucrat::GradeTooHighException();
     return;
 }
-//TOCOMPLETE
+
 Bureaucrat::Bureaucrat(const Bureaucrat &other) : name_(other.name_), grade_(other.grade_){
     if(grade_ > 150)
         throw Bureaucrat::GradeTooLowException();

@@ -6,18 +6,18 @@
 /*   By: ldevoude <ldevoude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 15:01:46 by ldevoude          #+#    #+#             */
-/*   Updated: 2026/02/06 13:45:47 by ldevoude         ###   ########.fr       */
+/*   Updated: 2026/02/10 15:13:01 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
 const char* Form::GradeTooHighException::what() const throw(){
-    return "Grade too high";
+    return "Form: Grade too high";
 }
 
 const char* Form::GradeTooLowException::what() const throw(){
-    return "Grade too low";
+    return "Form: Grade too low";
 }
 
 Form::Form(std::string given_name, int given_req_grade_to_sign,
@@ -79,6 +79,6 @@ void Form::beSigned(const Bureaucrat &other){
 
 std::ostream &operator<<(std::ostream &out, const Form &form){
     out<<form.getName()<<", form is signed? "<<form.getIsSigned()<<
-    " required grade to sign "<<form.getReqGradeToSign()<<"required grade to exec "<< form.getReqGradeToExec();
+    " required grade to sign "<<form.getReqGradeToSign()<<" required grade to exec "<< form.getReqGradeToExec();
     return(out);
 }

@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 11:35:45 by ldevoude          #+#    #+#             */
-/*   Updated: 2026/02/06 15:04:48 by ldevoude         ###   ########.fr       */
+/*   Updated: 2026/02/10 15:02:15 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 #define BUREAUCRAT_HPP
 
 #include <iostream>
-#include <string>
-#include <exception>
 #include "Form.hpp"
 
 class Form;
@@ -30,6 +28,7 @@ class Bureaucrat{
             public:
                 virtual const char* what() const throw();
         };
+        
         Bureaucrat(std::string given_name, int given_grade);
         Bureaucrat(const Bureaucrat &other);
         Bureaucrat &operator=(const Bureaucrat &other);

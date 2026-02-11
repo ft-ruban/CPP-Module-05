@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 11:35:45 by ldevoude          #+#    #+#             */
-/*   Updated: 2026/02/10 10:12:41 by ldevoude         ###   ########.fr       */
+/*   Updated: 2026/02/11 09:03:10 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 #define BUREAUCRAT_HPP
 
 #include <iostream>
-#include <string>
-#include <exception>
 #include "AForm.hpp"
 
 class AForm;

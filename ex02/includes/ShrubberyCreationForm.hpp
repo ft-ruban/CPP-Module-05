@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 07:14:04 by ldevoude          #+#    #+#             */
-/*   Updated: 2026/02/10 10:42:15 by ldevoude         ###   ########.fr       */
+/*   Updated: 2026/02/11 09:04:08 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 #define SHRUBBERYCREATIONFORM_HPP
 
 #include <iostream>
-#include <string>
 #include "AForm.hpp"
-
 
 class ShrubberyCreationForm : public AForm{
     public:

@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/06 15:05:10 by ldevoude          #+#    #+#             */
-/*   Updated: 2026/02/10 10:36:33 by ldevoude         ###   ########.fr       */
+/*   Updated: 2026/02/11 09:03:02 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 #define FORM_HPP
 
 #include <iostream>
-#include <string>
-#include <exception>
 #include "Bureaucrat.hpp"
 
 class Bureaucrat;
