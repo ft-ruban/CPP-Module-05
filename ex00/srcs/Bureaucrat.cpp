@@ -6,11 +6,11 @@
 /*   By: ldevoude <ldevoude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 14:54:37 by ldevoude          #+#    #+#             */
-/*   Updated: 2026/02/05 15:06:46 by ldevoude         ###   ########.fr       */
+/*   Updated: 2026/02/12 09:27:08 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#include "../includes/Bureaucrat.hpp"
 
 const char* Bureaucrat::GradeTooHighException::what() const throw() {
     return "Grade too high";
@@ -48,11 +48,12 @@ Bureaucrat::~Bureaucrat(){
     return;
 }
 
-std::string Bureaucrat::getName()const{
+const std::string& Bureaucrat::getName()const{
     return(name_);
 }
 
-int Bureaucrat::getGrade()const{
+
+const int& Bureaucrat::getGrade()const{
     return(grade_);
 }
 

@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 09:24:59 by ldevoude          #+#    #+#             */
-/*   Updated: 2026/02/12 08:59:18 by ldevoude         ###   ########.fr       */
+/*   Updated: 2026/02/12 10:00:29 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ AForm* Intern::makeForm(const std::string& form_name,
     return(NULL);
 }
 
-//todo protect?
 AForm* Intern::makeRobotomy(std::string target_form){
     RobotomyRequestForm* robotomy = NULL;
     try{

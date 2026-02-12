@@ -6,11 +6,11 @@
 /*   By: ldevoude <ldevoude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 15:01:46 by ldevoude          #+#    #+#             */
-/*   Updated: 2026/02/11 09:05:35 by ldevoude         ###   ########.fr       */
+/*   Updated: 2026/02/12 09:54:02 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AForm.hpp"
+#include "../includes/AForm.hpp"
 
 const char* AForm::GradeTooHighException::what() const throw(){
     return "Grade too high";
@@ -60,19 +60,19 @@ AForm::~AForm(){
     return;
 }
 
-std::string AForm::getName()const{
+const std::string& AForm::getName()const{
     return(name_);
 }
 
-bool AForm::getIsSigned()const{
+const bool& AForm::getIsSigned()const{
     return(is_signed_);
 }
 
-int AForm::getReqGradeToSign()const{
+const int& AForm::getReqGradeToSign()const{
     return(req_grade_to_sign_);
 }
 
-int AForm::getReqGradeToExec()const{
+const int& AForm::getReqGradeToExec()const{
     return(req_grade_to_exec_);
 }
 

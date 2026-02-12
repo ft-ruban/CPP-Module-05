@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/06 15:05:10 by ldevoude          #+#    #+#             */
-/*   Updated: 2026/02/11 09:03:02 by ldevoude         ###   ########.fr       */
+/*   Updated: 2026/02/12 09:59:03 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,10 @@ class AForm{
         AForm &operator=(const AForm &other);
         virtual ~AForm();
 
-        std::string getName()const;
-        bool        getIsSigned()const;
-        int         getReqGradeToSign()const;
-        int         getReqGradeToExec()const;
+        const std::string& getName()const;
+        const bool&        getIsSigned()const;
+        const int&         getReqGradeToSign()const;
+        const int&         getReqGradeToExec()const;
     
         void beSigned(const Bureaucrat &other);
         void execute(Bureaucrat const & executor)const;

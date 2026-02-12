@@ -6,14 +6,16 @@
 /*   By: ldevoude <ldevoude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 11:35:45 by ldevoude          #+#    #+#             */
-/*   Updated: 2026/02/10 15:00:59 by ldevoude         ###   ########.fr       */
+/*   Updated: 2026/02/12 09:21:27 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 
-#include <iostream>
+#include <string>
+#include <exception>
+#include <ostream>
 
 class Bureaucrat{
     public:
@@ -31,8 +33,8 @@ class Bureaucrat{
         Bureaucrat &operator=(const Bureaucrat &other);
         ~Bureaucrat();
 
-        std::string getName()const;
-        int         getGrade()const;
+        const std::string& getName()const;
+        const int&         getGrade()const;
         
         void increment();
         void decrement();

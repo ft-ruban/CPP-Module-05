@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 11:35:45 by ldevoude          #+#    #+#             */
-/*   Updated: 2026/02/10 15:02:15 by ldevoude         ###   ########.fr       */
+/*   Updated: 2026/02/12 09:48:57 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ class Bureaucrat{
         Bureaucrat &operator=(const Bureaucrat &other);
         ~Bureaucrat();
 
-        std::string getName()const;
-        int         getGrade()const;
+        const std::string& getName()const;
+        const int&         getGrade()const;
         
         void increment();
         void decrement();

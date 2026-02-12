@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 15:01:46 by ldevoude          #+#    #+#             */
-/*   Updated: 2026/02/10 15:13:01 by ldevoude         ###   ########.fr       */
+/*   Updated: 2026/02/12 09:48:27 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,19 +52,19 @@ Form::~Form(){
     return;
 }
 
-std::string Form::getName()const{
+const std::string& Form::getName()const{
     return(name_);
 }
 
-bool Form::getIsSigned()const{
+const bool& Form::getIsSigned()const{
     return(is_signed_);
 }
 
-int Form::getReqGradeToSign()const{
+const int& Form::getReqGradeToSign()const{
     return(req_grade_to_sign_);
 }
 
-int Form::getReqGradeToExec()const{
+const int& Form::getReqGradeToExec()const{
     return(req_grade_to_exec_);
 }
 

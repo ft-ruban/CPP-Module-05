@@ -6,13 +6,13 @@
 /*   By: ldevoude <ldevoude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 15:10:09 by ldevoude          #+#    #+#             */
-/*   Updated: 2026/02/10 15:28:18 by ldevoude         ###   ########.fr       */
+/*   Updated: 2026/02/12 09:49:47 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "../includes/Bureaucrat.hpp"
+#include "../includes/Form.hpp"
 
 bool Bureaucrat_test(std::string name_bureaucrat, int grade_to_give){
     Bureaucrat* bureaucrat_object = NULL;
