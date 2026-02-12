@@ -6,13 +6,13 @@
 /*   By: ldevoude <ldevoude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 15:10:09 by ldevoude          #+#    #+#             */
-/*   Updated: 2026/02/12 09:28:06 by ldevoude         ###   ########.fr       */
+/*   Updated: 2026/02/12 09:49:47 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <cstdlib> //for atoi
-#include "Bureaucrat.hpp"
+#include "../includes/Bureaucrat.hpp"
+#include "../includes/Form.hpp"
 
 bool Bureaucrat_test(std::string name_bureaucrat, int grade_to_give){
     Bureaucrat* bureaucrat_object = NULL;
@@ -38,14 +38,31 @@ bool Bureaucrat_test(std::string name_bureaucrat, int grade_to_give){
     return(0);
 }
 
-int main(int argc, char *argv[]){
-    if(argc != 3){
-        std::cout<<"enter 2 arguments (first would be the name of the bureaucrat) second the given grade"<<std::endl;
+int main(void){
+    Bureaucrat* wallace = NULL;
+    Form*       form_one = NULL;
+
+    try
+    {
+        form_one = new Form("form_one", 15, 45);
+        wallace = new Bureaucrat("Wallace Breen", 80);
+        std::cout<<*wallace<<std::endl;
+        std::cout<<*form_one<<std::endl;
+        wallace->signForm(*form_one);
+        std::cout<<*form_one<<std::endl;
+        std::cout<<"end of try scope"<<std::endl;
+    }
+    catch (std::exception & e)
+    {
+        std::cout<< e.what() <<std::endl;
+        delete wallace;
+        delete form_one;
+        std::cout<<"exception caught"<<std::endl;
         return(1);
     }
-    std::string bureaucrat_name = argv[1];
-    int given_grade = atoi(argv[2]);
-    //std::cout<<given_grade<<std::endl;
-    Bureaucrat_test("bureaucrat_object Breen", given_grade);    
+    std::cout<<"no exception caught"<<std::endl;
+    delete form_one;
+    delete wallace;
     return 0; 
 }
+

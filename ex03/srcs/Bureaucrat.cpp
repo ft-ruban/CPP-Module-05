@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 14:54:37 by ldevoude          #+#    #+#             */
-/*   Updated: 2026/02/12 09:27:08 by ldevoude         ###   ########.fr       */
+/*   Updated: 2026/02/12 10:02:00 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ const std::string& Bureaucrat::getName()const{
     return(name_);
 }
 
-
 const int& Bureaucrat::getGrade()const{
     return(grade_);
 }
@@ -71,7 +70,35 @@ void Bureaucrat::decrement(){
     return;
 }
 
+void Bureaucrat::signForm(AForm &form){
+    try{
+        form.beSigned(*this);
+        std::cout<<this->name_<<" signed "<< form.getName()<<std::endl;
+    }
+    catch(std::exception &e){
+        std::cout<<this->name_<<" couldn't sign "
+                 <<form.getName()<<" because "
+                 <<e.what()<<std::endl;
+    }
+
+}
+
+void Bureaucrat::executeForm(AForm const & form)const {
+    try{
+        form.execute(*this);
+        std::cout<<this->name_<<" executed "<< form.getName()<<std::endl;
+    }
+    catch(std::exception &e){
+        std::cout<<this->name_<<" couldn't execute "
+                 <<form.getName()<<" because "
+                 <<e.what()<<std::endl;
+    }
+}
+
+
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat){
-    out << bureaucrat.getName()<<", bureaucrat grade "<< bureaucrat.getGrade();
+    out << bureaucrat.getName()
+        <<", bureaucrat grade "
+        << bureaucrat.getGrade();
     return out;
 }

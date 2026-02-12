@@ -6,16 +6,17 @@
 /*   By: ldevoude <ldevoude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 11:35:45 by ldevoude          #+#    #+#             */
-/*   Updated: 2026/02/12 09:21:27 by ldevoude         ###   ########.fr       */
+/*   Updated: 2026/02/12 09:48:57 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 
-#include <string>
-#include <exception>
-#include <ostream>
+#include <iostream>
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat{
     public:
@@ -38,6 +39,7 @@ class Bureaucrat{
         
         void increment();
         void decrement();
+        void signForm(Form &form);
     
     private:
         const std::string name_;
